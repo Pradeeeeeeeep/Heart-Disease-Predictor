@@ -202,6 +202,19 @@ presets = {
 
 active_preset = presets.get(st.session_state.preset, presets['default'])
 
+# Information on detection workflow
+with st.expander("ℹ️ How Does the AI Detect Heart Disease? (Click to view Detection Workflow)"):
+    st.markdown("""
+    ### 🔬 Clinical Decision Pipeline
+    1. **Data Ingestion**: Receives 13 patient biomarkers spanning baseline hemodynamics, lipid profiles, treadmill stress response, and electrophysiology.
+    2. **Automated Preprocessing**: Replaces missing values via statistical median/mode imputation and applies `StandardScaler` and `OneHotEncoder`.
+    3. **Random Forest Ensemble**: 300 de-correlated decision trees analyze the multi-dimensional vector through independent root-to-leaf decision paths.
+    4. **Dual Diagnostic Outputs**:
+       - **Binary Risk Probability**: Calculates $P(\\text{Disease} \\mid \\mathbf{x})$ (Low Risk $<30\\%$, Moderate $30-65\\%$, High Risk $>65\\%$).
+       - **Severity Staging**: Multi-class estimator identifies severity from Stage 0 (Healthy) to Stage 4 (Critical).
+    5. **Biomarker Analysis**: Cross-references patient values with clinical AHA/ACC guidelines to highlight actionable risk factors (Hypertension, Hypercholesterolemia, ST Depression, etc.).
+    """)
+
 # Input Form organized in intuitive clinical sections
 st.subheader("Patient Clinical Data")
 st.caption("Fill in the patient's diagnostic and laboratory test details below.")
