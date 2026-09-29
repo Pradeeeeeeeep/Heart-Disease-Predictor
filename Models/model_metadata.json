@@ -1,0 +1,79 @@
+{
+  "model_type": "Random Forest Classifier Pipeline",
+  "accuracy": 0.8333333333333334,
+  "roc_auc": 0.9231748726655347,
+  "features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalch",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "numerical_features": [
+    "age",
+    "trestbps",
+    "chol",
+    "thalch",
+    "oldpeak",
+    "ca"
+  ],
+  "categorical_features": [
+    "sex",
+    "cp",
+    "fbs",
+    "restecg",
+    "exang",
+    "slope",
+    "thal"
+  ],
+  "categories": {
+    "sex": [
+      "Male",
+      "Female"
+    ],
+    "cp": [
+      "typical angina",
+      "atypical angina",
+      "non-anginal",
+      "asymptomatic"
+    ],
+    "fbs": [
+      "False",
+      "True"
+    ],
+    "restecg": [
+      "normal",
+      "st-t abnormality",
+      "lv hypertrophy"
+    ],
+    "exang": [
+      "False",
+      "True"
+    ],
+    "slope": [
+      "upsloping",
+      "flat",
+      "downsloping"
+    ],
+    "thal": [
+      "normal",
+      "fixed defect",
+      "reversable defect"
+    ]
+  },
+  "stages": {
+    "0": "No Heart Disease (Normal / Healthy)",
+    "1": "Stage 1 (Mild Heart Disease)",
+    "2": "Stage 2 (Moderate Heart Disease)",
+    "3": "Stage 3 (Severe Heart Disease)",
+    "4": "Stage 4 (Critical Heart Disease)"
+  }
+}
